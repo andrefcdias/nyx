@@ -1,6 +1,6 @@
 {
-  "name": "cashconverters2",
-  "short_name": "cashconverters2",
+  "name": "cashconverters",
+  "short_name": "cashconverters",
   "start_url": "/",
   "display": "standalone",
   "orientation": "portrait",
