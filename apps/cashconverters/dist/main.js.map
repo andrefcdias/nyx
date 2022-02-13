@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../src/app/libs/index.ts", "../src/app/index.ts", "../src/environments/environment.ts", "../src/main.ts"],
+  "sourcesContent": ["export function funcExportFromLib() {\n  console.log('Function Invoked!');\n}\n", "import { funcExportFromLib } from './libs';\n\nexport function main() {\n  funcExportFromLib();\n}\n", "export const environment = {\n  production: false,\n  port: 4599,\n};\n", "import { main } from './app/index';\nimport { environment } from './environments/environment';\n\nconsole.log('environment: ', environment);\nmain();\n"],
+  "mappings": ";AAAO,6BAA6B;AAClC,UAAQ,IAAI;AAAA;;;ACCP,gBAAgB;AACrB;AAAA;;;ACHK,IAAM,cAAc;AAAA,EACzB,YAAY;AAAA,EACZ,MAAM;AAAA;;;ACCR,QAAQ,IAAI,iBAAiB;AAC7B;",
+  "names": []
+}

@@ -8,13 +8,23 @@
     "test": "nx test"
   },
   "private": true,
-  "dependencies": {},
   "devDependencies": {
+    "@angular-devkit/schematics": "^13.2.3",
     "@nrwl/cli": "13.8.1",
+    "@nrwl/eslint-plugin-nx": "13.8.1",
+    "@nrwl/linter": "13.8.1",
+    "@nrwl/node": "^13.8.1",
     "@nrwl/nx-cloud": "latest",
-    "@nrwl/tao": "13.8.1",
-    "@nrwl/workspace": "13.8.1",
+    "@nrwl/tao": "^13.8.1",
+    "@nrwl/workspace": "^13.8.1",
     "@types/node": "16.11.7",
+    "@typescript-eslint/eslint-plugin": "~5.10.0",
+    "@typescript-eslint/parser": "~5.10.0",
+    "esbuild": "^0.14.21",
+    "esbuild-plugin-alias-path": "latest",
+    "eslint": "~8.7.0",
+    "eslint-config-prettier": "8.1.0",
+    "nx-plugin-esbuild": "^0.5.0",
     "prettier": "^2.5.1",
     "typescript": "~4.5.2"
   }
