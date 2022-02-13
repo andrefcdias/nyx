@@ -1,15 +1,27 @@
 {
-  "extends": "../../tsconfig.base.json",
-  "compilerOptions": {
-    "strict": true,
-    "baseUrl": "./",
-    "rootDir": "./",
-    "paths": {},
-    "module": "CommonJS",
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true
-  },
-  "files": [],
-  "include": ["src"],
-  "references": []
-}
+    "extends": "../../tsconfig.base.json",
+    "compilerOptions": {
+      "jsx": "react",
+      "noEmit": true,
+      "jsxFactory": "h",
+      "jsxFragmentFactory": "Fragment",
+      "allowJs": true,
+      "esModuleInterop": true,
+      "allowSyntheticDefaultImports": true,
+      "forceConsistentCasingInFileNames": true,
+      "strict": true,
+      "noPropertyAccessFromIndexSignature": true,
+      "noImplicitReturns": true,
+      "noFallthroughCasesInSwitch": true,
+    },
+    "files": [],
+    "include": [],
+    "references": [
+      {
+        "path": "./tsconfig.app.json"
+      },
+      {
+        "path": "./tsconfig.spec.json"
+      }
+    ]
+  }

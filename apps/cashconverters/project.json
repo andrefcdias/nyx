@@ -4,52 +4,64 @@
   "projectType": "application",
   "targets": {
     "build": {
-      "executor": "nx-plugin-esbuild:build",
-      "outputs": ["{options.outputPath}"],
+      "executor": "@nrwl/workspace:run-commands",
       "options": {
-        "outputPath": "apps/cashconverters/dist",
-        "main": "apps/cashconverters/src/main.ts",
-        "tsConfig": "apps/cashconverters/tsconfig.app.json",
-        "assets": ["apps/cashconverters/src/assets"],
-        "tsconfigPath": "apps/cashconverters/tsconfig.json",
-        "watch": false,
-        "bundle": true,
-        "platform": "node",
-        "extendConfig": "nx-esbuild.ts"
-      },
-      "configurations": {
-        "production": {
-          "fileReplacements": [
-            {
-              "replace": "apps/cashconverters/src/environments/environment.ts",
-              "with": "apps/cashconverters/src/environments/environment.prod.ts"
-            }
-          ],
-          "skipTypeCheck": false,
-          "sourceMap": "both",
-          "bundle": true,
-          "externalDependencies": "all",
-          "minify": true,
-          "extractLicenses": true
-        }
+        "cwd": "apps/cashconverters",
+        "commands": [
+          {
+            "command": "preact build"
+          }
+        ]
+      }
+    },
+    "build-esbuild": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": [
+          {
+            "command": "esbuild apps/cashconverters/src/index.ts --bundle --outfile=dist/cashconverters/out.js"
+          }
+        ]
       }
     },
     "serve": {
-      "executor": "nx-plugin-workspace:node-serve",
+      "executor": "@nrwl/workspace:run-commands",
       "options": {
-        "buildTarget": "cashconverters:esbuild-build"
-      },
-      "configurations": {
-        "production": {
-          "buildTarget": "cashconverters:esbuild-build:production"
-        }
+        "cwd": "apps/cashconverters",
+        "commands": [
+          {
+            "command": "sirv build --port 8080 --cors --single"
+          }
+        ]
+      }
+    },
+    "start": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "cwd": "apps/cashconverters",
+        "commands": [
+          {
+            "command": "preact watch"
+          }
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": [
+        "coverage/apps/cashconverters"
+      ],
+      "options": {
+        "jestConfig": "apps/cashconverters/jest.config.js",
+        "passWithNoTests": true
       }
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
-      "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["apps/cashconverters/**/*.ts"]
+        "lintFilePatterns": [
+          "apps/cashconverters/src/**/*.{ts,tsx,js,jsx}"
+        ]
       }
     }
   },
