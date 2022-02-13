@@ -1,19 +1,19 @@
 import { FunctionalComponent, h } from 'preact';
 import { Link } from 'preact-router/match';
-import style from './style.css';
+import { activeStyle, headerStyle, titleStyle } from './header.css';
 
 const Header: FunctionalComponent = () => {
     return (
-        <header class={style.header}>
-            <h1>Preact App</h1>
+        <header class={headerStyle}>
+            <h1 class={titleStyle}>Preact App</h1>
             <nav>
-                <Link activeClassName={style.active} href="/">
+                <Link activeClassName={activeStyle} href="/">
                     Home
                 </Link>
-                <Link activeClassName={style.active} href="/profile">
+                <Link activeClassName={activeStyle} href="/profile">
                     Me
                 </Link>
-                <Link activeClassName={style.active} href="/profile/john">
+                <Link activeClassName={activeStyle} href="/profile/john">
                     John
                 </Link>
             </nav>

@@ -17,33 +17,21 @@
     "build-esbuild": {
       "executor": "@nrwl/workspace:run-commands",
       "options": {
-        "commands": [
-          {
-            "command": "esbuild apps/cashconverters/src/index.ts --bundle --outfile=dist/cashconverters/out.js"
-          }
-        ]
+        "command": "esbuild apps/cashconverters/src/index.ts --bundle --outfile=dist/cashconverters/out.js"
       }
     },
     "serve": {
       "executor": "@nrwl/workspace:run-commands",
       "options": {
         "cwd": "apps/cashconverters",
-        "commands": [
-          {
-            "command": "sirv build --port 8080 --cors --single"
-          }
-        ]
+        "command": "sirv build --port 8080 --cors --single"
       }
     },
     "start": {
       "executor": "@nrwl/workspace:run-commands",
       "options": {
         "cwd": "apps/cashconverters",
-        "commands": [
-          {
-            "command": "preact watch"
-          }
-        ]
+        "command": "preact watch"
       }
     },
     "test": {

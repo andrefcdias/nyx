@@ -1,4 +1,4 @@
-import './style/index.css';
 import App from './components/app';
+import "./resets.css"
 
 export default App;
