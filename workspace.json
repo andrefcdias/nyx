@@ -1,6 +1,7 @@
 {
   "version": 2,
   "projects": {
-    "cashconverters": "apps/cashconverters"
+    "cashconverters": "apps/cashconverters",
+    "solidjs": "apps/solidjs"
   }
 }
