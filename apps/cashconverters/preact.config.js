@@ -1,4 +1,4 @@
-const { VanillaExtractPlugin } = require('@vanilla-extract/webpack-plugin');
+const { VanillaExtractPlugin } = require('@vanilla-extract/webpack-plugin')
 
 /**
  * Function that mutates the original webpack config.
@@ -10,5 +10,5 @@ const { VanillaExtractPlugin } = require('@vanilla-extract/webpack-plugin');
  * @param {Record<string, unknown>} options - this is mainly relevant for plugins (will always be empty in the config), default to an empty object
  */
 export default (config, env, helpers) => {
-    config.plugins.push(new VanillaExtractPlugin());
-};
+    config.plugins.push(new VanillaExtractPlugin())
+}

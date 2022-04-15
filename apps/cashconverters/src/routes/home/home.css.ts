@@ -1,8 +1,8 @@
-import { style } from '@vanilla-extract/css';
+import { style } from '@vanilla-extract/css'
 
 export const homeStyle = style({
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    gap: "32px"
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    gap: '32px',
 })

@@ -1,51 +1,47 @@
 {
-  "root": "apps/solidjs",
-  "sourceRoot": "apps/solidjs/src",
-  "projectType": "application",
-  "targets": {
-    "build": {
-      "executor": "@nrwl/workspace:run-commands",
-      "options": {
-        "cwd": "apps/solidjs",
-        "commands": [
-          {
-            "command": "vite build --outDir ../../dist/solidjs/ --emptyOutDir"
-          }
-        ]
-      }
+    "root": "apps/solidjs",
+    "sourceRoot": "apps/solidjs/src",
+    "projectType": "application",
+    "targets": {
+        "build": {
+            "executor": "@nrwl/workspace:run-commands",
+            "options": {
+                "cwd": "apps/solidjs",
+                "commands": [
+                    {
+                        "command": "vite build --outDir ../../dist/solidjs/ --emptyOutDir"
+                    }
+                ]
+            }
+        },
+        "serve": {
+            "executor": "@nrwl/workspace:run-commands",
+            "options": {
+                "cwd": "apps/solidjs",
+                "command": "vite preview"
+            }
+        },
+        "start": {
+            "executor": "@nrwl/workspace:run-commands",
+            "options": {
+                "cwd": "apps/solidjs",
+                "command": "vite"
+            }
+        },
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "outputs": ["coverage/apps/solidjs"],
+            "options": {
+                "jestConfig": "apps/solidjs/jest.config.js",
+                "passWithNoTests": true
+            }
+        },
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": ["apps/solidjs/src/**/*.{ts,tsx,js,jsx}"]
+            }
+        }
     },
-    "serve": {
-      "executor": "@nrwl/workspace:run-commands",
-      "options": {
-        "cwd": "apps/solidjs",
-        "command": "vite preview"
-      }
-    },
-    "start": {
-      "executor": "@nrwl/workspace:run-commands",
-      "options": {
-        "cwd": "apps/solidjs",
-        "command": "vite"
-      }
-    },
-    "test": {
-      "executor": "@nrwl/jest:jest",
-      "outputs": [
-        "coverage/apps/solidjs"
-      ],
-      "options": {
-        "jestConfig": "apps/solidjs/jest.config.js",
-        "passWithNoTests": true
-      }
-    },
-    "lint": {
-      "executor": "@nrwl/linter:eslint",
-      "options": {
-        "lintFilePatterns": [
-          "apps/solidjs/src/**/*.{ts,tsx,js,jsx}"
-        ]
-      }
-    }
-  },
-  "tags": []
+    "tags": []
 }

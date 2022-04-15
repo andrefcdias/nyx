@@ -1,57 +1,55 @@
 {
-  "root": "apps/cashconverters",
-  "sourceRoot": "apps/cashconverters/src",
-  "projectType": "application",
-  "targets": {
-    "build": {
-      "executor": "@nrwl/workspace:run-commands",
-      "options": {
-        "cwd": "apps/cashconverters",
-        "commands": [
-          {
-            "command": "preact build"
-          }
-        ]
-      }
+    "root": "apps/cashconverters",
+    "sourceRoot": "apps/cashconverters/src",
+    "projectType": "application",
+    "targets": {
+        "build": {
+            "executor": "@nrwl/workspace:run-commands",
+            "options": {
+                "cwd": "apps/cashconverters",
+                "commands": [
+                    {
+                        "command": "preact build"
+                    }
+                ]
+            }
+        },
+        "build-esbuild": {
+            "executor": "@nrwl/workspace:run-commands",
+            "options": {
+                "command": "esbuild apps/cashconverters/src/index.ts --bundle --outfile=dist/cashconverters/out.js"
+            }
+        },
+        "serve": {
+            "executor": "@nrwl/workspace:run-commands",
+            "options": {
+                "cwd": "apps/cashconverters",
+                "command": "sirv build --port 8080 --cors --single"
+            }
+        },
+        "start": {
+            "executor": "@nrwl/workspace:run-commands",
+            "options": {
+                "cwd": "apps/cashconverters",
+                "command": "preact watch"
+            }
+        },
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "outputs": ["coverage/apps/cashconverters"],
+            "options": {
+                "jestConfig": "apps/cashconverters/jest.config.js",
+                "passWithNoTests": true
+            }
+        },
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": [
+                    "apps/cashconverters/src/**/*.{ts,tsx,js,jsx}"
+                ]
+            }
+        }
     },
-    "build-esbuild": {
-      "executor": "@nrwl/workspace:run-commands",
-      "options": {
-        "command": "esbuild apps/cashconverters/src/index.ts --bundle --outfile=dist/cashconverters/out.js"
-      }
-    },
-    "serve": {
-      "executor": "@nrwl/workspace:run-commands",
-      "options": {
-        "cwd": "apps/cashconverters",
-        "command": "sirv build --port 8080 --cors --single"
-      }
-    },
-    "start": {
-      "executor": "@nrwl/workspace:run-commands",
-      "options": {
-        "cwd": "apps/cashconverters",
-        "command": "preact watch"
-      }
-    },
-    "test": {
-      "executor": "@nrwl/jest:jest",
-      "outputs": [
-        "coverage/apps/cashconverters"
-      ],
-      "options": {
-        "jestConfig": "apps/cashconverters/jest.config.js",
-        "passWithNoTests": true
-      }
-    },
-    "lint": {
-      "executor": "@nrwl/linter:eslint",
-      "options": {
-        "lintFilePatterns": [
-          "apps/cashconverters/src/**/*.{ts,tsx,js,jsx}"
-        ]
-      }
-    }
-  },
-  "tags": []
+    "tags": []
 }

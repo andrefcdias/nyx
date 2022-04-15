@@ -1,11 +1,11 @@
-import { style, globalStyle } from '@vanilla-extract/css';
+import { style, globalStyle } from '@vanilla-extract/css'
 
 export const headerStyle = style({
     position: 'fixed',
     background: '#717D84',
     boxShadow: '0 0 5px rgba(0, 0, 0, 0.5)',
     width: '100%',
-    zIndex: 50
+    zIndex: 50,
 })
 
 export const titleStyle = style({
@@ -14,5 +14,5 @@ export const titleStyle = style({
     fontSize: '24px',
     lineHeight: '56px',
     fontWeight: 400,
-    color: '#FFF'
+    color: '#FFF',
 })

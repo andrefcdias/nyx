@@ -1,14 +1,14 @@
-import type { Component } from 'solid-js';
-import { app } from './App.css';
-import Header from './Header';
+import type { Component } from 'solid-js'
+import { app } from './App.css'
+import Header from './Header'
 
 const App: Component = () => {
-  return (
-    <div class={app}>
-      <Header />
-      <main>main pog</main>
-    </div>
-  );
-};
+    return (
+        <div class={app}>
+            <Header />
+            <main>main pog</main>
+        </div>
+    )
+}
 
-export default App;
+export default App

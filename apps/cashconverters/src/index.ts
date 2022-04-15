@@ -1,4 +1,4 @@
-import App from './components/app';
-import "./resets.css"
+import App from './components/app'
+import './resets.css'
 
-export default App;
+export default App

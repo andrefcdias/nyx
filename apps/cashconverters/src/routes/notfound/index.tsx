@@ -1,5 +1,5 @@
-import { FunctionalComponent, h } from 'preact';
-import { Link } from 'preact-router/match';
+import { FunctionalComponent, h } from 'preact'
+import { Link } from 'preact-router/match'
 
 const Notfound: FunctionalComponent = () => {
     return (
@@ -10,7 +10,7 @@ const Notfound: FunctionalComponent = () => {
                 <h4>Back to Home</h4>
             </Link>
         </div>
-    );
-};
+    )
+}
 
-export default Notfound;
+export default Notfound
