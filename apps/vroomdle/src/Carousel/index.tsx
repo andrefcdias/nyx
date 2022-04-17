@@ -1,4 +1,4 @@
-import { Component, createEffect, createSignal } from 'solid-js'
+import { Component, createEffect, createSignal, For } from 'solid-js'
 import { buttonListStyle, carouselStyle, imageStyle } from './Carousel.css'
 
 interface CarouselProps {
@@ -17,9 +17,11 @@ const Carousel: Component<CarouselProps> = (props) => {
         <div class={carouselStyle}>
             <img class={imageStyle} src={images()[index()]} />
             <div class={buttonListStyle}>
-                {images().map((_, idx) => (
-                    <button onClick={() => setIndex(idx)}>{idx + 1}</button>
-                ))}
+                <For each={images()}>
+                    {(_, idx) => (
+                        <button onClick={() => setIndex(idx())}>{idx() + 1}</button>
+                    )}
+                </For>
             </div>
         </div>
     )

@@ -1,4 +1,4 @@
-import { Component, createSignal } from 'solid-js'
+import { Component, createSignal, For } from 'solid-js'
 import { guesserStyle } from './Guesser.css'
 
 interface GuesserProps {
@@ -17,9 +17,7 @@ const Guesser: Component<GuesserProps> = (props) => {
 
     return (
         <div class={guesserStyle}>
-            {guesses().map((g) => (
-                <input disabled value={g} />
-            ))}
+            <For each={guesses()}>{(g) => <input disabled value={g} />}</For>
             <input
                 value={guess()}
                 onChange={(event) => {
