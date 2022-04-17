@@ -1,14 +1,15 @@
-## Usage
+# Vroomdle
 
-Those templates dependencies are maintained via [pnpm](https://pnpm.io) via `pnpm up -Lri`.
+## What is it?
 
-This is the reason you see a `pnpm-lock.yaml`. That being said, any package manager will work. This file can be safely be removed once you clone a template.
+Vroomdle is an app inspired by [Framed](https://framed.wtf/), and by consequence [Wordle](https://www.nytimes.com/games/wordle/index.html), about guessing motor racing related stuff.
 
-```bash
-$ npm install # or pnpm install or yarn install
-```
+## What's it built on?
 
-### Learn more on the [Solid Website](https://solidjs.com) and come chat with us on our [Discord](https://discord.com/invite/solidjs)
+Here's what I used to build Vroomdle:
+- [Vite](https://vitejs.dev/)
+- [SolidJS](https://solidjs.com)
+- [Vanilla Extract](https://github.com/seek-oss/vanilla-extract#globalstyle)
 
 ## Available Scripts
 
