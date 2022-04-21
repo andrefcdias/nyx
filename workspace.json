@@ -2,7 +2,6 @@
     "version": 2,
     "projects": {
         "cashconverters": "apps/cashconverters",
-        "solidjs": "apps/solidjs",
         "vroomdle": "apps/vroomdle"
     }
 }
