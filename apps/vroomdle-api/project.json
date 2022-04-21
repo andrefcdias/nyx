@@ -1,0 +1,52 @@
+{
+    "root": "apps/vroomdle-api",
+    "sourceRoot": "apps/vroomdle-api/src",
+    "projectType": "application",
+    "targets": {
+        "build": {
+            "executor": "@nrwl/node:webpack",
+            "outputs": ["{options.outputPath}"],
+            "options": {
+                "outputPath": "dist/apps/vroomdle-api",
+                "main": "apps/vroomdle-api/src/main.ts",
+                "tsConfig": "apps/vroomdle-api/tsconfig.app.json",
+                "assets": ["apps/vroomdle-api/src/assets"]
+            },
+            "configurations": {
+                "production": {
+                    "optimization": true,
+                    "extractLicenses": true,
+                    "inspect": false,
+                    "fileReplacements": [
+                        {
+                            "replace": "apps/vroomdle-api/src/environments/environment.ts",
+                            "with": "apps/vroomdle-api/src/environments/environment.prod.ts"
+                        }
+                    ]
+                }
+            }
+        },
+        "serve": {
+            "executor": "@nrwl/node:node",
+            "options": {
+                "buildTarget": "vroomdle-api:build"
+            }
+        },
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "outputs": ["{options.outputFile}"],
+            "options": {
+                "lintFilePatterns": ["apps/vroomdle-api/**/*.ts"]
+            }
+        },
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "outputs": ["coverage/apps/vroomdle-api"],
+            "options": {
+                "jestConfig": "apps/vroomdle-api/jest.config.js",
+                "passWithNoTests": true
+            }
+        }
+    },
+    "tags": []
+}

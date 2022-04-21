@@ -18,7 +18,8 @@
             "executor": "@nrwl/workspace:run-commands",
             "options": {
                 "cwd": "apps/vroomdle",
-                "command": "vite preview"
+                "command": "vite preview",
+                "proxyConfig": "apps/vroomdle/proxy.conf.json"
             }
         },
         "start": {
