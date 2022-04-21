@@ -1,7 +1,6 @@
 {
     "version": 2,
     "projects": {
-        "cashconverters": "apps/cashconverters",
         "vroomdle": "apps/vroomdle",
         "vroomdle-api": "apps/vroomdle-api"
     }
