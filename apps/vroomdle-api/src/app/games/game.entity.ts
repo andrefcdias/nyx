@@ -12,6 +12,6 @@ export class Game {
     @Column()
     answer: string
 
-    @OneToMany(() => Image, (image) => image.gameId)
+    @OneToMany(() => Image, (image) => image.game)
     images: Image[]
 }

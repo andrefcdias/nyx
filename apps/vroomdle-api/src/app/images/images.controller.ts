@@ -1,4 +1,3 @@
-import { readFileSync } from "fs"
 import { Controller, Get, Param, Res } from '@nestjs/common';
 import { ImagesService } from './images.service';
 import { join } from "path";

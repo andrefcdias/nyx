@@ -7,7 +7,7 @@ export class Image {
     id: string
 
     @ManyToOne(() => Game, (game) => game.id)
-    gameId: number
+    game: number
 
     @Column("blob")
     image: any
