@@ -1,0 +1,20 @@
+version: '3.9'
+services:
+    db:
+        image: mysql
+        container_name: vroomdle_db
+        command: --default-authentication-plugin=mysql_native_password
+        restart: always
+        ports:
+            - 3306:3306
+        environment:
+            MYSQL_RANDOM_ROOT_PASSWORD: true
+            MYSQL_DATABASE: vroomdle
+            MYSQL_USER: vroomdle
+            MYSQL_PASSWORD: 8cWnm3J6tkjTamKMYu7uTJazDuyjVZfc
+
+    adminer:
+        image: adminer
+        restart: always
+        ports:
+            - 8080:8080
