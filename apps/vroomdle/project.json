@@ -18,8 +18,7 @@
             "executor": "@nrwl/workspace:run-commands",
             "options": {
                 "cwd": "apps/vroomdle",
-                "command": "vite preview",
-                "proxyConfig": "apps/vroomdle/proxy.conf.json"
+                "command": "vite preview"
             }
         },
         "start": {
@@ -27,14 +26,6 @@
             "options": {
                 "cwd": "apps/vroomdle",
                 "command": "vite"
-            }
-        },
-        "test": {
-            "executor": "@nrwl/jest:jest",
-            "outputs": ["coverage/apps/vroomdle"],
-            "options": {
-                "jestConfig": "apps/vroomdle/jest.config.js",
-                "passWithNoTests": true
             }
         },
         "lint": {
